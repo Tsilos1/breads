@@ -13,6 +13,12 @@ function New () {
             id="name"
             required
           />
+          <label htmlFor="info">Information About</label>
+          <input
+            type="text"
+            name="info"
+            id="info" />
+          <label htmlFor="hasGluten">Has Gluten?</label>
           <label htmlFor="image">Image</label>
           <input
             type="text"
@@ -30,7 +36,7 @@ function New () {
           
         </form>
         <div className="backButton">
-            <a href="/breads"><button>Go back to the index</button></a>
+            <a href="/breads"><button>Home</button></a>
         </div>
 
         
