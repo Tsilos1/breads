@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/Default')
 
-function Index ({breads, title})  {
+function Index({breads, title})  {
     return (
         <Default title={title}>
         <h2>Index Page</h2>
@@ -13,7 +13,7 @@ function Index ({breads, title})  {
                 return(
                     <li key={index}>
                         {/* index refers to the index position of the array item */}
-                        <a href={`/breads/${index}`}>
+                        <a href={`/breads/${bread.id}`}>
                             {bread.name}
                         </a>
                     </li>

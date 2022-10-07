@@ -24,6 +24,7 @@ function New () {
             type="text"
             name="image"
             id="image"/>
+            {/* pattern="(https?:\/\/(?!www))" */}
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
@@ -36,7 +37,7 @@ function New () {
           
         </form>
         <div className="backButton">
-            <a href="/breads"><button>Home</button></a>
+            <a href="/breads"><button>Go back to the index</button></a>
         </div>
 
         

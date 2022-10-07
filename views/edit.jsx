@@ -10,8 +10,7 @@ function Edit ({bread, index}) {
           <input
             type="text"
             name="name"
-            id="name"
-            required
+            id="name" required
             defaultValue={bread.name}
           />
           <label htmlFor="info">Information About</label>
