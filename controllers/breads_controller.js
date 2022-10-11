@@ -61,18 +61,17 @@ breads.get('/:id/edit', (req, res) => {
     })
 })
 
-//SHOW
+// SHOW
 breads.get('/:id', (req, res) => {
   Bread.findById(req.params.id)
-    .then(foundBread => {
-      res.render('show', {
-        bread: foundBread
+      .then(foundBread => {
+        const bakedBy = foundBread.getBakedBy() 
+        res.render('show', {
+            bread: foundBread
+        })
       })
     })
-    .catch(err => {
-      res.send('404')
-    })
-})
+
 
 
 
