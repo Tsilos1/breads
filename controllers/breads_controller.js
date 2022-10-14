@@ -45,20 +45,15 @@ breads.get('/data/seed', (req, res) => {
 
 
 // INDEX
-breads.get('/', (req, res) => {
-  Baker.find()
-    .then(foundBakers => {
-      Bread.find()
-      .then(foundBreads => {
-          res.render('index', {
-              breads: foundBreads,
-              bakers: foundBakers,
-              title: 'Index Page'
-          })
-      })
-    })
+breads.get('/', async (req, res) => {
+  const foundBakers = await Baker.find().lean()
+  const foundBreads = await Bread.find()
+  res.render('index', {
+    breads: foundBreads,
+    bakers: foundBakers,
+    title: 'Index Page'
+  })
 })
-
 
 
 
@@ -77,10 +72,6 @@ breads.get('/:id/edit', (req, res) => {
 })
 
 
-
-
-
-
 // SHOW
 breads.get('/:id', (req, res) => {
   Bread.findById(req.params.id)
@@ -97,11 +88,10 @@ breads.get('/:id', (req, res) => {
 
 
 
-
-// CREATE
+// CREATE A BREAD
 breads.post('/', (req, res) => {
   if(!req.body.image) {
-      req.body.image = undefined 
+      req.body.image = 'https://img.freepik.com/premium-photo/bread-background-top-view-white-black-rye-loaves-black_116547-11007.jpg' 
   }
   if(req.body.hasGluten === 'on') {
     req.body.hasGluten = true
