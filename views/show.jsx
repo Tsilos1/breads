@@ -1,6 +1,6 @@
 const React = require('react')
 const bread = require('../models/bread')
-const Default = require('./layouts/Default')
+const Default = require('./layouts/default')
 
 function Show ({bread, index}) {
     //confirm we are getting our bread data in the terminal.
